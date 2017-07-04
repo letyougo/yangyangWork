@@ -15,8 +15,9 @@
 <ul class="nav nav-pills">
     {% for item in list %}
         <li role="presentation" class="{{ item.className }}"><a href="?id={{ item.id }}">{{ item.name }}</a></li>
-    {% endfor %}
 
+    {% endfor %}
+    <li role="presentation" ><a href="/admin">去后台</a></li>
 </ul>
 
 <br>
@@ -28,7 +29,7 @@
     <div class="panel-body">
         <ul class="list-group">
             {% for l in item.lesson %}
-                <li class="list-group-item"><a href="{{ l.url }}">{{ l.name }}</a></li>
+                <li class="list-group-item">{{ l.name }}</li>
             {% endfor %}
         </ul>
     </div>

@@ -6,7 +6,7 @@ class CourseD(admin.ModelAdmin):
     list_display = ('id','name')
 
 class LessonD(admin.ModelAdmin):
-    list_display = ('id','name','course','url')
+    list_display = ('id','name','course')
 
 admin.site.register(Course,CourseD)
 admin.site.register(Lesson,LessonD)
