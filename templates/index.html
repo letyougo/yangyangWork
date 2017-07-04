@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<ul class="nav nav-pills">
+    {% for item in list %}
+        <li role="presentation" class="{{ item.className }}"><a href="?id={{ item.id }}">{{ item.name }}</a></li>
+    {% endfor %}
+
+</ul>
+
+<br>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">课程链接列表</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="list-group">
+            {% for l in item.lesson %}
+                <li class="list-group-item"><a href="{{ l.url }}">{{ l.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+
+</body>
+</html>
