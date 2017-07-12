@@ -35,6 +35,7 @@ class Course(models.Model):
 class Lesson(models.Model):
     course = models.ForeignKey(Course,verbose_name=u'所属专题')
     name = models.CharField(max_length=50, verbose_name=u'课程')
+    url = models.CharField(max_length=512, verbose_name=u'链接',null=True,blank=True)
     # url = models.CharField(max_length=512)
 
 
@@ -46,7 +47,7 @@ class Lesson(models.Model):
         return dict(
             id=self.id,
             name=self.name,
-            # url=self.url,
+            url=self.url,
         )
 
 

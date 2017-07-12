@@ -32,7 +32,10 @@
     <div class="panel-body">
         <ul class="list-group">
             {% for l in item.lesson %}
-                <li class="list-group-item">{{ l.name }}</li>
+                <li class="list-group-item">
+									<span>{{l.name}}</span>
+									<span><a href="{{l.url}}">{{l.url}}</a></span>
+								</li>
             {% endfor %}
         </ul>
     </div>
