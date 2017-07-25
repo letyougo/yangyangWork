@@ -34,7 +34,7 @@
             {% for l in item.lesson %}
                 <li class="list-group-item">
 									<span>{{l.name}}</span>
-									<span><a href="{{l.url}}">{{l.url}}</a></span>
+									<span class="data" data-url="{{l.url}}"> 链接：<a class="url"></a>密码:<label class="password"></label></span>
 								</li>
             {% endfor %}
         </ul>
@@ -43,4 +43,29 @@
 
 
 </body>
+<script>
+    var dom = document.querySelectorAll('.data')
+
+
+    for(var i=0;i<dom.length;i++){
+
+        var d = dom[i].getAttribute('data-url')
+        var d_url = d.match(/链接：(.+)\s密码/)
+        var d_password = d.match(/密码：(\w+)/)
+
+        if(d_url){
+            d_url = d_url[1]
+        }
+        if(d_password){
+            d_password = d_password[1]
+        }
+
+        var url = dom[i].querySelector('.url')
+        var password = dom[i].querySelector('.password')
+
+        dom[i].querySelector('.url').setAttribute('href',d_url)
+        dom[i].querySelector('.url').innerText = d_url
+        dom[i].querySelector('.password').innerText =d_password
+    }
+</script>
 </html>
