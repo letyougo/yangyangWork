@@ -64,6 +64,11 @@
         var password = dom[i].querySelector('.password')
 
         dom[i].querySelector('.url').setAttribute('href',d_url)
+        dom[i].onclick = function (e) {
+            e.preventDefault()
+            window.open(d_url)
+        }
+
         dom[i].querySelector('.url').innerText = d_url
         dom[i].querySelector('.password').innerText =d_password
     }
