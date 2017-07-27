@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from models import *
-
+import xadmin
 class CourseD(admin.ModelAdmin):
     list_display = ('id','name')
 
@@ -12,5 +12,5 @@ class LessonD(admin.ModelAdmin):
     list_filter = ('course',)
 
 
-admin.site.register(Course,CourseD)
-admin.site.register(Lesson,LessonD)
+xadmin.site.register(Course,CourseD)
+xadmin.site.register(Lesson,LessonD)
